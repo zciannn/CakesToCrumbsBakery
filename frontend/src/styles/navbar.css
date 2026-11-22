@@ -1,0 +1,304 @@
+
+/* ========================================
+   HEADER BACKGROUNDS
+======================================== */
+
+/* Homepage header */
+
+/* HOMEPAGE HEADER */
+.home-header {
+  background: transparent;
+}
+
+.inner-header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rose);
+}
+
+/* ========================================
+   NAVIGATION HEADER
+======================================== */
+
+.site-header {
+  min-height: 120px;
+  max-width: 1510px;
+  margin: auto;
+  padding: 0 3%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  position: relative;
+  z-index: 10;
+}
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-shrink: 0;
+  width: max-content;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.logo .logo-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: 55px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #df8b9c;
+  white-space: nowrap;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.logo .logo-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #df8b9c;
+  white-space: nowrap;
+  line-height: 1;
+  margin-top: -13px;
+}
+
+/* ========================================
+   SOCIAL MEDIA ICONS
+======================================== */
+
+.logo-socials {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 0 5px;
+  gap: 0;
+  margin-top: 12px;
+}
+
+.logo-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+
+  color: var(--chocolate);
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.logo-socials svg {
+  width: 20px;
+  height: 20px;
+}
+
+.logo-socials a:hover {
+  color: var(--berry);
+  transform: translateY(-3px);
+}
+
+/* ========================================
+   NAVIGATION LINKS
+======================================== */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(15px, 2vw, 32px);
+  margin-left: auto;
+}
+
+.nav a {
+  position: relative;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  color: var(--chocolate);
+  transition: color 0.2s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--berry);
+}
+
+/* Heart under navigation links */
+.nav a:not(.nav-order)::after {
+  content: '♥';
+
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 11px;
+  color: var(--berry);
+  opacity: 0;
+
+  transition: opacity 0.2s ease;
+}
+
+.nav a:not(.nav-order):hover::after,
+.nav a.active:not(.nav-order)::after {
+  opacity: 1;
+}
+
+/* Hide active heart when hovering another link */
+.nav:has(a:not(.active):hover) a.active::after {
+  opacity: 0;
+}
+
+/* ========================================
+   GET A QUOTE BUTTON
+======================================== */
+
+.nav .nav-order {
+  background: var(--chocolate);
+  color: white;
+
+  padding: 14px 22px;
+  border-radius: 30px;
+
+  transition: background 0.2s ease;
+}
+
+.nav .nav-order:hover {
+  background: var(--berry);
+  color: white;
+}
+
+.nav .nav-order::after {
+  display: none;
+}
+
+/* ========================================
+   MOBILE MENU BUTTON
+======================================== */
+
+.mobile-menu {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--chocolate);
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1050px) {
+  .site-header {
+    gap: 16px;
+  }
+
+  .logo .logo-script {
+    font-size: 46px;
+  }
+
+  .logo .logo-serif {
+    font-size: 34px;
+    margin-top: -11px;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+
+  .nav a {
+    font-size: 10px;
+  }
+}
+
+/* ========================================
+   MOBILE NAVIGATION
+======================================== */
+
+@media (max-width: 900px) {
+  .site-header {
+    min-height: 90px;
+    padding: 0 6%;
+  }
+
+  .mobile-menu {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    gap: 23px;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    margin-left: 0;
+    padding: 25px 8% 30px;
+
+    background: var(--butter);
+    box-shadow: 0 20px 25px #58392f20;
+    align-items: flex-start;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+}
+
+/* ========================================
+   SMALL SCREENS
+======================================== */
+
+@media (max-width: 760px) {
+  .logo .logo-script {
+    font-size: 42px;
+  }
+
+  .logo .logo-serif {
+    font-size: 30px;
+    margin-top: -10px;
+  }
+
+  .logo-socials {
+    margin-top: 7px;
+    padding: 0 4px;
+  }
+
+  .logo-socials a {
+    width: 20px;
+    height: 20px;
+  }
+
+  .logo-socials svg {
+    width: 16px;
+    height: 16px;
+  }
+}

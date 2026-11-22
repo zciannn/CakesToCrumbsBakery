@@ -1,0 +1,238 @@
+
+/* ========================================
+   OUR CAKES PAGE
+======================================== */
+
+.cakes-page {
+  background: var(--paper);
+  min-height: 100vh;
+}
+
+/* ========================================
+   PAGE INTRODUCTION
+======================================== */
+
+.cakes-intro {
+  padding: 100px 7% 35px;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    #f2e0df 0%,
+    var(--paper) 100%
+  );
+}
+
+.cakes-intro h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(40px, 5vw, 70px);
+  font-weight: 400;
+  line-height: 1.2;
+
+  margin: 18px auto 20px;
+  max-width: 1000px;
+
+  color: var(--chocolate);
+}
+
+.cakes-intro h1 em {
+  color: #8d414b;
+  font-weight: 400;
+}
+
+.cakes-intro .section-intro {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #79665f;
+
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   CAKE COLLECTION GRID
+======================================== */
+
+.cakes-page .collections {
+  padding-top: 55px;
+  padding-bottom: 110px;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* ========================================
+   INDIVIDUAL COLLECTION CARDS
+======================================== */
+
+.collection-card {
+  min-height: 365px;
+  padding: 26px 27px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.collection-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(88, 57, 47, 0.1);
+}
+
+/* BIRTHDAY CAKES */
+.collection-card.dusty {
+  background: var(--rose);
+  color: #83565d;
+}
+
+/* CUSTOM CAKES */
+.collection-card.butter {
+  background: var(--butter);
+  color: #7e6f60;
+}
+
+/* SWEET TREATS */
+.collection-card.cocoa {
+  background: var(--chocolate);
+  color: var(--butter);
+}
+
+/* ========================================
+   COLLECTION NUMBER
+======================================== */
+
+.collection-no {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* ========================================
+   DECORATIVE SYMBOLS
+======================================== */
+
+.collection-decoration {
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 120px;
+  opacity: 0.35;
+  line-height: 1;
+}
+
+/* ========================================
+   COLLECTION TEXT
+======================================== */
+
+.collection-card h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 31px;
+  font-weight: 400;
+  margin: 0 0 6px;
+}
+
+.collection-card p {
+  font-size: 13px;
+  margin: 0 0 15px;
+}
+
+.collection-card svg {
+  transition: transform 0.2s ease;
+}
+
+.collection-card:hover svg {
+  transform: translateX(5px);
+}
+
+/* ========================================
+   BOTTOM CALL TO ACTION
+======================================== */
+
+.cakes-bottom {
+  background: #f2e0df;
+  padding: 95px 7%;
+  text-align: center;
+}
+
+.cakes-bottom h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 400;
+  line-height: 1.3;
+
+  max-width: 750px;
+  margin: 20px auto 35px;
+}
+
+.cakes-bottom h2 em {
+  color: #8d414b;
+}
+
+.cakes-bottom .btn {
+  margin: 0 auto;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .cakes-intro {
+    padding: 75px 6% 30px;
+  }
+
+  .collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .collection-card {
+    min-height: 330px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .cakes-intro {
+    padding: 65px 7% 25px;
+  }
+
+  .cakes-intro h1 {
+    font-size: clamp(36px, 9vw, 50px);
+  }
+
+  .cakes-intro .section-intro {
+    font-size: 14px;
+  }
+
+  .cakes-page .collections {
+    padding: 35px 7% 75px;
+  }
+
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-card {
+    min-height: 290px;
+  }
+
+  .collection-decoration {
+    font-size: 85px;
+  }
+
+  .collection-card h3 {
+    font-size: 28px;
+  }
+
+  .cakes-bottom {
+    padding: 75px 7%;
+  }
+}
