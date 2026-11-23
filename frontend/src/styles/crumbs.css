@@ -1,0 +1,165 @@
+
+/* CRUMBS PAGE */
+
+.crumbs-page {
+  background: var(--paper);
+}
+
+.crumbs-intro {
+  text-align: center;
+  padding: 100px 7% 75px;
+  background: linear-gradient(
+    180deg,
+    #f2e0df,
+    var(--paper)
+  );
+}
+
+.crumbs-intro h1 {
+  font-size: clamp(40px, 5vw, 70px);
+  margin: 20px auto;
+}
+
+.crumbs-intro > p:last-child {
+  max-width: 550px;
+  margin: auto;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #79665f;
+}
+
+/* COLLECTION */
+
+.crumbs-collection {
+  max-width: 1390px;
+  margin: auto;
+  padding: 80px 5% 110px;
+  text-align: center;
+}
+
+.crumbs-collection h2 {
+  font-size: clamp(36px, 4vw, 55px);
+  margin: 15px 0 45px;
+}
+
+.crumbs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* CARDS */
+
+.crumbs-card {
+  min-height: 365px;
+  padding: 26px 27px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.crumbs-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(88, 57, 47, 0.1);
+}
+
+.crumbs-card.cupcakes {
+  background: var(--rose);
+  color: #83565d;
+}
+
+.crumbs-card.cake-pops {
+  background: var(--butter);
+  color: #7e6f60;
+}
+
+.crumbs-card.sweet-treats {
+  background: var(--chocolate);
+  color: var(--butter);
+}
+
+.crumbs-number {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.crumbs-card-decoration {
+  font-family: Georgia, serif;
+  font-size: 120px;
+  opacity: 0.35;
+  line-height: 1;
+}
+
+.crumbs-card-content {
+  text-align: left;
+}
+
+.crumbs-card h3 {
+  font-size: 31px;
+  margin: 0 0 8px;
+}
+
+.crumbs-card p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* BOTTOM SECTION */
+
+.crumbs-bottom {
+  background: #f2e0df;
+  text-align: center;
+  padding: 90px 7%;
+}
+
+.crumbs-bottom h2 {
+  font-size: clamp(36px, 4vw, 55px);
+  margin: 15px 0;
+}
+
+.crumbs-bottom > p:not(.eyebrow) {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #79665f;
+  margin-bottom: 30px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .crumbs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .crumbs-intro {
+    padding: 75px 7% 55px;
+  }
+
+  .crumbs-collection {
+    padding: 65px 7% 75px;
+  }
+
+  .crumbs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .crumbs-card {
+    min-height: 290px;
+  }
+
+  .crumbs-card-decoration {
+    font-size: 85px;
+  }
+
+  .crumbs-bottom {
+    padding: 75px 7%;
+  }
+}

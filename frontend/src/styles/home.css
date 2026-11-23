@@ -381,4 +381,21 @@
     isolation: isolate;
     }
 
+
+/* OUR STORY PAGE */
+
+    .story-page .story-text h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(38px, 4.2vw, 63px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 15px 0;
+    }
+
+    .story-page .story-text h1 em {
+    color: #8d414b;
+    font-weight: 400;
+    }
+
+
 }

@@ -1,4 +1,3 @@
-
 import {
   BrowserRouter,
   Routes,
@@ -13,6 +12,10 @@ import Footer from './components/Footer.jsx';
 
 import Home from './pages/Home.jsx';
 import OurCakes from './pages/OurCakes.jsx';
+import OurStory from './pages/OurStory.jsx';
+import Crumbs from './pages/Crumbs.jsx';
+import Flavors from './pages/Flavors.jsx';
+import FAQ from './pages/FAQ.jsx';
 
 function ScrollToLocation() {
   const { pathname, hash } = useLocation();
@@ -51,10 +54,11 @@ function Website() {
           </div>
 
           <Routes>
-            <Route
-              path="/our-cakes"
-              element={<OurCakes />}
-            />
+            <Route path="/our-cakes" element={<OurCakes />} />
+            <Route path="/our-story" element={<OurStory />} />
+            <Route path="/crumbs" element={<Crumbs />} />
+            <Route path="/flavors" element={<Flavors />} />
+            <Route path="/faq" element={<FAQ />} />
           </Routes>
         </>
       )}

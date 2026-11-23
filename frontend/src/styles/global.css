@@ -115,9 +115,45 @@ h2 em {
   border: 1px solid #b8818a;
 }
 
-/* MOBILE */
+
+/* ========================================
+   MOBILE
+======================================== */
+
 @media (max-width: 760px) {
   .section {
     padding: 75px 7%;
   }
+}
+
+/* ========================================
+   KEEP FOOTER AT BOTTOM
+======================================== */
+
+html,
+body {
+  min-height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let the homepage fill available space */
+#root > .homepage-gradient {
+  flex: 1 0 auto;
+}
+
+/* Let other pages fill available space too */
+#root > .inner-header + main {
+  flex: 1 0 auto;
+}
+
+/* Keep footer the same size */
+#root > footer {
+  flex-shrink: 0;
 }

@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 import {
@@ -16,19 +17,23 @@ export default function Navbar() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  const activeClass = ({ isActive }) =>
+    isActive ? 'active' : '';
+
   return (
     <header className="site-header">
 
       {/* LOGO AND SOCIAL MEDIA */}
       <div className="logo-container">
-        <a
+        <Link
           className="logo"
-          href="#home"
+          to="/"
+          onClick={closeMenu}
           aria-label="Cakes to Crumbs home"
         >
           <span className="logo-script">Cakes to</span>
           <span className="logo-serif">CRUMBS</span>
-        </a>
+        </Link>
 
         <div className="logo-socials">
           <a
@@ -86,52 +91,74 @@ export default function Navbar() {
         className={menuOpen ? 'nav open' : 'nav'}
         aria-label="Main navigation"
       >
-        <a
-          href="/" onClick={closeMenu}
+        <NavLink
+          to="/"
+          end
+          onClick={closeMenu}
+          className={activeClass}
         >
           HOME
-        </a>
+        </NavLink>
 
-        <a href="/our-cakes" onClick={closeMenu}>
+        <NavLink
+          to="/our-cakes"
+          onClick={closeMenu}
+          className={activeClass}
+        >
           OUR CAKES
-        </a>
+        </NavLink>
 
-        <a href="#crumbs" onClick={closeMenu}>
+        <NavLink
+          to="/crumbs"
+          onClick={closeMenu}
+          className={activeClass}
+        >
           CRUMBS
-        </a>
+        </NavLink>
 
-        <a href="#flavors" onClick={closeMenu}>
+        <NavLink
+          to="/flavors"
+          onClick={closeMenu}
+          className={activeClass}
+        >
           FLAVORS
-        </a>
+        </NavLink>
 
-        <a href="#story" onClick={closeMenu}>
+        <NavLink
+          to="/our-story"
+          onClick={closeMenu}
+          className={activeClass}
+        >
           OUR STORY
-        </a>
+        </NavLink>
 
-        <a href="#faq" onClick={closeMenu}>
+        <NavLink
+          to="/faq"
+          onClick={closeMenu}
+          className={activeClass}
+        >
           FAQ
-        </a>
+        </NavLink>
 
-        <a
-          href="#contact"
+        <Link
+          to="/faq#contact"
           className="nav-order"
           onClick={closeMenu}
         >
           GET A QUOTE
-        </a>
+        </Link>
       </nav>
 
       {/* MOBILE MENU */}
       <button
         className="mobile-menu"
         type="button"
-        aria-label="Toggle navigation"
+        aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
         aria-expanded={menuOpen}
         onClick={() => setMenuOpen(!menuOpen)}
       >
         {menuOpen ? <X /> : <Menu />}
       </button>
-
     </header>
   );
 }

@@ -6,7 +6,7 @@ export default function Footer() {
         Cakes <em>to</em> Crumbs
       </a>
 
-      <small>BAKED WITH LOVE ♡</small>
+      <small>MONTGOMERY COUNTY, MARYLAND | (301) 580-3894 </small>
 
       <a href="#top">BACK TO TOP ↑</a>
     </footer>

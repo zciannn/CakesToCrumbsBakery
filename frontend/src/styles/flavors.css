@@ -1,0 +1,145 @@
+
+/* FLAVORS PAGE */
+
+.flavors-page {
+  background: var(--paper);
+}
+
+.flavors-intro {
+  text-align: center;
+  padding: 100px 7% 75px;
+  background: #f2e0df;
+}
+
+.flavors-intro h1 {
+  font-size: clamp(40px, 5vw, 70px);
+  max-width: 950px;
+  margin: 20px auto;
+}
+
+.flavors-intro > p:last-child {
+  color: #79665f;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.flavors-section {
+  max-width: 1390px;
+  margin: auto;
+  padding: 90px 5% 110px;
+  text-align: center;
+}
+
+.flavors-section h2 {
+  font-size: clamp(36px, 4vw, 55px);
+  margin: 15px 0 45px;
+}
+
+.flavors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.flavor-card {
+  min-height: 340px;
+  padding: 25px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: transform 0.2s ease;
+}
+
+.flavor-card:hover {
+  transform: translateY(-5px);
+}
+
+.flavor-number {
+  align-self: flex-start;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.flavor-decoration {
+  font-family: Georgia, serif;
+  font-size: 90px;
+  opacity: 0.4;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+}
+
+.flavor-card h3 {
+  font-size: 25px;
+  margin: 0 0 10px;
+}
+
+.flavor-card p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.flavor-card.vanilla {
+  background: #f0eee5;
+  color: #7e6f60;
+}
+
+.flavor-card.chocolate {
+  background: #58392f;
+  color: #f0eee5;
+}
+
+.flavor-card.velvet {
+  background: #c9949e;
+  color: #58392f;
+}
+
+.flavor-card.strawberry {
+  background: #e6c6c7;
+  color: #83565d;
+}
+
+.flavors-bottom {
+  background: #f2e0df;
+  text-align: center;
+  padding: 90px 7%;
+}
+
+.flavors-bottom h2 {
+  font-size: clamp(36px, 4vw, 55px);
+  margin: 15px 0;
+}
+
+.flavors-bottom p:not(.eyebrow) {
+  font-size: 14px;
+  color: #79665f;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 900px) {
+  .flavors-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .flavors-intro {
+    padding: 75px 7% 55px;
+  }
+
+  .flavors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flavor-card {
+    min-height: 270px;
+  }
+
+  .flavors-section {
+    padding: 70px 7%;
+  }
+}
